@@ -1,119 +1,95 @@
-🚀 Dashboard de Proyectos: Componentes y Estilización Avanzada
 
-Este proyecto fue desarrollado como parte del Laboratorio de Desarrollo de Aplicaciones Web Avanzado. Su objetivo principal es demostrar la creación de interfaces modernas, funcionales y altamente reutilizables mediante la combinación estratégica de tecnologías de estilización y componentes de React.
+## 🚀 Dashboard de Proyectos: Componentes y Estilización Avanzada
 
-⚙️ Tecnologías Utilizadas
+Este proyecto fue desarrollado como parte del **Laboratorio de Desarrollo de Aplicaciones Web Avanzado**, con el objetivo de demostrar la creación de **interfaces modernas, funcionales y altamente reutilizables** mediante la combinación estratégica de tecnologías de estilización y componentes basados en React.
 
-Framework: Next.js (App Router)
+---
 
-Lenguaje: TypeScript
+### ⚙️ Tecnologías Utilizadas
 
-Estilización Principal: Tailwind CSS
+* **Framework:** Next.js (App Router)
+* **Lenguaje:** TypeScript
+* **Estilización Principal:** Tailwind CSS
+* **Estilización Avanzada / Efectos:** CSS Modules
+* **Librería de Componentes:** shadcn/ui (basada en Radix UI)
+* **Gestión de Estado:** React Hooks (`useState`, `useMemo`)
+* **Librería de Fechas:** date-fns
 
-Estilización Avanzada/Efectos: CSS Modules
+---
 
-Librería de Componentes: shadcn/ui (basada en Radix UI)
+### ✨ Implementación y Objetivos del Proyecto
 
-Gestión de Estado: React Hooks (useState, useMemo)
+El proyecto implementa un **Dashboard de Gestión de Proyectos**, cumpliendo con los requisitos funcionales y visuales establecidos para la práctica:
 
-Librería de Fechas: date-fns
+#### 1. Estilización y Tema
 
-✨ Implementación y Objetivos de la Tarea
+* **Tema Personalizado:** Se modificó el color primario global en Tailwind CSS para adoptar un tono **Verde Esmeralda** (`150 62.8% 30.6%`), demostrando la facilidad de aplicar una identidad visual corporativa.
+* **Uso Híbrido:** Se mantiene una estrategia combinada:
 
-El proyecto implementa un Dashboard de Gestión de Proyectos, cumpliendo con los siguientes requisitos funcionales y de estilización:
+  * **Tailwind CSS** para el layout, espaciado y colores.
+  * **CSS Modules** para animaciones, efectos y pseudo-elementos complejos (como loaders y labels flotantes).
 
-1. Estilización y Tema
+---
 
-Tema Personalizado: Se modificó el color primario de la aplicación utilizando la configuración de Tailwind CSS para adoptar un tono Verde Esmeralda (Hue: 150 62.8% 30.6%), demostrando la facilidad de aplicar temas corporativos.
+#### 2. Componentes UI de shadcn/ui Implementados
 
-Uso Híbrido: Se mantiene la filosofía de usar CSS Modules para animaciones complejas (e.g., efectos de loading y pseudo-elementos) y Tailwind CSS para layout, espaciado y colores (Ejercicio 1).
+Para construir una interfaz profesional y coherente, se integraron los siguientes componentes:
 
-2. Componentes UI de shadcn/ui Implementados
+| **Componente**                   | **Uso Principal**                                                      |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| **Spinner**                      | Simulación de peticiones al backend durante operaciones CRUD.          |
+| **Alert**                        | Validaciones en formularios y confirmaciones de acciones destructivas. |
+| **Calendar / Popover**           | Selección de fechas en formularios de creación y edición.              |
+| **Pagination**                   | Navegación entre grandes volúmenes de tareas.                          |
+| **Select, Dialog, Card, Button** | Estructura base del CRUD y elementos interactivos.                     |
 
-Para construir la interfaz profesional, se integraron y utilizaron los siguientes componentes de shadcn/ui:
+---
 
-Componente
+#### 3. Funcionalidades del Dashboard (CRUD en Memoria)
 
-Uso Principal
+El sistema permite gestionar de forma completa las tres entidades principales: **Proyectos, Equipo y Tareas**, junto a una sección de configuración.
 
-Spinner
+| **Sección**       | **Funcionalidad Principal**                                                                  | **Campos Relevantes**                                              |
+| ----------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Resumen**       | Cálculo de métricas dinámicas (proyectos, tareas completadas, miembros activos).             | —                                                                  |
+| **Proyectos**     | CRUD básico: creación y eliminación de proyectos.                                            | `name`, `description`, `category`, `priority`, `teamMembers`       |
+| **Equipo**        | CRUD completo: creación, edición y eliminación de miembros. Manejo seguro de valores `null`. | `userId`, `role`, `position`, `birthdate`, `projectId`, `isActive` |
+| **Tareas**        | CRUD básico con paginación y filtrado por proyecto.                                          | `description`, `projectId`, `status`, `dateline`, `userId`         |
+| **Configuración** | Formulario simulado con Switch, Select y alertas de guardado.                                | `theme`, `emailNotifications`, `apiUrl`                            |
 
-Simulación de peticiones al backend durante las operaciones CRUD.
+---
 
-Alert
+### 💡 Conclusión
 
-Mensajes de validación en formularios (SettingsForm) y confirmaciones destructivas (Eliminar Proyecto/Miembro).
+El **Dashboard de Proyectos** demuestra cómo combinar la **potencia de Tailwind CSS** con la **modularidad de CSS Modules** y la **flexibilidad de shadcn/ui** para crear aplicaciones escalables, personalizables y con un diseño profesional. Además, el manejo correcto del estado global y las validaciones en formularios refuerzan la solidez técnica del sistema.
 
-Calendar/Popover
+---
 
-Selección de fechas (birthdate y dateline) en los formularios de Edición/Creación.
+### 🚀 Inicio Rápido
 
-Pagination
+1. **Clonar el repositorio:**
 
-Implementado en la sección de Tareas para manejar grandes conjuntos de datos.
+   ```bash
+   git clone https://github.com/Anjelisahori/LAB-11-DWA
+   cd next-shadcn-ui
+   ```
 
-Select, Dialog, Card, Button
+2. **Instalar dependencias:**
 
-Componentes base para el layout y la interacción del CRUD.
+   ```bash
+   npm install
+   ```
 
-3. Funcionalidades de Gestión de Negocio (CRUD en Memoria)
+3. **Ejecutar la aplicación en modo desarrollo:**
 
-El Dashboard permite la gestión completa de las tres entidades principales:
+   ```bash
+   npm run dev
+   ```
 
-Menú
+4. **Abrir en el navegador:**
 
-Funcionalidad Implementada
+   ```
+   http://localhost:3000/dashboard
+   ```
 
-Campos Relevantes
-
-Resumen
-
-Métricas Dinámicas: Las tarjetas se actualizan automáticamente en función de los datos cargados en memoria (projects.length, tareas completadas, etc.).
-
--
-
-Proyectos
-
-CRUD Básico: Permite la Creación de nuevos proyectos y la Eliminación con confirmación.
-
-name, description, category, priority, teamMembers.
-
-Equipo
-
-CRUD Completo: Permite Crear, Editar y Eliminar miembros del equipo. Se manejan valores null (projectId) de forma segura.
-
-userId, role, position, birthdate, projectId, isActive.
-
-Tareas
-
-CRUD Básico & Paginación: Permite la Creación y Eliminación de tareas, con filtro por proyecto y asignación de usuario.
-
-description, projectId, status, dateline, userId.
-
-Configuración
-
-Formulario Simulado: Demuestra la implementación de un formulario con Switch, Select y validación de guardado mediante el componente Alert.
-
-theme, emailNotifications, apiUrl.
-
-🚀 Inicio Rápido
-
-Para levantar la aplicación en tu entorno local:
-
-Clonar el repositorio:
-
-git clone [URL_DEL_REPOSITORIO] next-shadcn-ui
-cd next-shadcn-ui
-
-
-Instalar dependencias:
-
-npm install
-
-
-Ejecutar la aplicación en modo desarrollo:
-
-npm run dev
-
-
-La aplicación estará disponible en http://localhost:3000/dashboard.
+---
